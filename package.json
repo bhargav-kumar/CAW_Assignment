@@ -1,0 +1,19 @@
+{
+  "name": "pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress-xpath": "^1.4.0",
+    "protractor-beautiful-reporter": "^1.3.6"
+  },
+  "dependencies": {
+    "jasmine-allure-reporter": "^1.0.2"
+  }
+}

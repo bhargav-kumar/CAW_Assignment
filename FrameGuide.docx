@@ -1,0 +1,3 @@
+Execute run.bat file to run test scripts in windows
+
+npm test to execute scripts from terminal

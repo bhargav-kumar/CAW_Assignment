@@ -1,0 +1,12 @@
+{
+    "growthZone": {
+        "url": "https://growthzonedev.com/",
+        "userName": "ravi.kiran@mailinator.com",
+        "password": "qwerty123"
+    },
+    "bigBasket": {
+        "url": "https://www.bigbasket.com/",
+        "homePageTitle": "Online Grocery Shopping and Online Supermarket in India - bigbasket",
+        "cartItemsNum": "1"
+    }
+}
