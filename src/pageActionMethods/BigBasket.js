@@ -46,6 +46,11 @@ class BigBasketActionMethods {
         return this;
     }
 
+    scrollToShowMore() {
+        safeActions.moveToElement(by.xpath(pageLocators.showMore));
+        return this;
+    }
+
 }
 
 module.exports = new BigBasketActionMethods();

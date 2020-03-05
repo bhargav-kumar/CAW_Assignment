@@ -36,6 +36,10 @@ class pageCombinedActionMethods {
         bigBasketPageActions.goToVegetable();
     }
 
+    scrollToShowMoreInVegetablesPage() {
+        bigBasketPageActions.scrollToShowMore();
+    }
+
 }
 
 module.exports = new pageCombinedActionMethods();

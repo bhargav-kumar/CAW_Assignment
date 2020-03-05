@@ -13,6 +13,8 @@ class locators {
         this.ItemsInBasket = "//div[@class='eubx4']";
         this.category = "//a[@qa='categoryDD']";
         this.vegetables = "//li//a[text()='Fruits & Vegetables'][@qa='catL1']";
+        this.showMore = "//button[text()='Show More']";
+
     }
 }
 

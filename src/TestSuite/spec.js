@@ -3,7 +3,7 @@ let testImpl = require("../../src/combinedPageActions/CombinedPageActions.js");
 let testData = require("../../src/TestData/testData.json");
 let loc = require("../../src/pageLocators/Locators.js");
 
-describe("Protractor Demo App", function() {
+describe("CAW Studios assignment", function() {
 
     beforeEach(function() {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
@@ -12,6 +12,8 @@ describe("Protractor Demo App", function() {
 
     afterEach(function() {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+      browser.manage().deleteAllCookies();
+    browser.executeScript('window.sessionStorage.clear();window.localStorage.clear();');
     });
 
   it("Add item to basket and verify", function() {
@@ -25,28 +27,27 @@ describe("Protractor Demo App", function() {
     // testImpl.verifyItemIsAddedToCart(testData.bigBasket.cartItemsNum);
 });
 
-xit("verify count of friuts and vegetables in bigbasket", function() {
+it("verify count of friuts and vegetables in bigbasket", function() {
     
     browser.ignoreSynchronization = true;
     browser.waitForAngular();
     testImpl.launchApplication(testData.bigBasket.url);
     testImpl.verifyPageTile(testData.bigBasket.homePageTitle);
-    var EC=protractor.ExpectedConditions;
     testImpl.goToVegetablesSection();
-
-    var ele3 = element(by.xpath("//h2[@qa='pageName']/span"))
-    browser.wait(EC.visibilityOf(ele3),6000,"Custom Error Message");
-
-    ele3.getText().then(function(text){
-        console.log(text);
-    });
+    var ele3 = element(by.xpath("//h2[@qa='pageName']")).getText().then(function(txt){ return txt.replace(/\s{2,}/, ' ');});
+    testImpl.scrollToShowMoreInVegetablesPage();
+    var numbers = element.all(by.xpath("//div[@qa='product']"));
+    expect(numbers.count()).toBe(ele3);
 });
 
-xit("Growth zone", function() {
+it("Growth zone", function() {
     browser.ignoreSynchronization = true;
     browser.waitForAngular();
     testImpl.launchApplication(testData.growthZone.url);
     testImpl.loginToGrowthZone(testData.growthZone.userName, testData.growthZone.password);    
+
+    //Cannot login into application because of invalid login credentials
+    //Remaining code is not implemented due to above issue
 });
 
 });

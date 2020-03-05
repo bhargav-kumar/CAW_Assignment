@@ -37,7 +37,12 @@ class Browser {
         browser.driver.sleep(time_* 1000);
     }
 
-
+    moveToElement(locator_) {
+        var EC=protractor.ExpectedConditions;
+        var ele4 = element(locator_);
+    browser.wait(EC.visibilityOf(ele4),12000,"element is not visible");
+    browser.actions().mouseMove(ele4).perform();
+    }
 
 }
 
